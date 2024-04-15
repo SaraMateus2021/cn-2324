@@ -1,0 +1,31 @@
+1º Bitvise:
+-Todos do grupo criam o seu par de chaves; cada um cria a sua própria password mas o "identificador" é o mesmo para todos
+-Depois de exportarmos a chave pública acrescentamos à parte final da chave o identificador de grupo
+
+2º GCP:
+- VM (https://console.cloud.google.com/welcome?project=cn2324-t2-g04): Compute Engine » VM instances » create instance 
+- Na parte Security » Add manually generated SSH key » add item, pomos as chaves publicas de cada membro do grupo
+- Zona : europe-north1-a
+- Machine  TYpe = e2-small
+- Boot disk: centOs Stream 8
+- Firewall: allow http e https traffic
+
+3º Bitvise:
+- 
+- Aceder à VM através do cliente SSH(seguindo os passos do eninciado) e no final fazer login(todos do grupo podem fazer);
+	3.1º Terminal:  
+		sudo yum install java-11-openjdk-devel (só é preciso um instalar)
+		java -version
+- Clicar em New SFPT Window » browse to folder » escolher o .jar (que fizemos download do moodle) e arrastá-lo para o outro lado (máquina virtual)
+	3.1º Terminal:  
+		java -jar ServiceREST.jar 80 (está a correr)
+		ls -al
+		cat ServiceRestLogs (vemos todos os pedidos que foram feitos no browser)
+		sudo rm ServiceRestLogs
+		java -jar ServiceRestLogs (já não esta porque a removemos)
+
+4ºBrowser:
+- http:// <ip external>/ping
+
+5º GCP:
+- Set up firewall rules > create firewall rules
